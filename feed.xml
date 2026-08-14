@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-08-14 13:45">
+  <shop>
+    <name>Витебские ковры</name>
+    <company>ОАО «Витебские ковры»</company>
+    <url>https://vitcarpet.by</url>
+    <currencies><currency id="RUB" rate="1"/></currencies>
+    <categories><category id="1">Тканые ковры — хит-сет</category></categories>
+    <offers>
+    <offer id="khitset-01" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-avanti/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/9c2/500_500_1/a3702hh15s9n5sm1nn0quto5s1m6tia3.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>20С7-БК(прям.)</vendorCode>
+      <name>Ковёр «Аванти» — тканый, ворс хит-сет</name>
+      <description>Каждый ковер из коллекции «Аванти» – это настоящий акцент, который подчеркивает индивидуальность Вашего пространства. Тканый ковёр из коллекции «Аванти», раздел «Хит-сет». Артикул 20С7-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 561 600 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1793 г. Расцветок в коллекции: 43. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Аванти» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-avanti/) Запросы: Аванти, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-02" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-bella/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/d9a/500_500_1/ocwdyof14pwd6ojee1lq49x5ckmirgj3.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>19С7-ВИ(прям.)</vendorCode>
+      <name>Ковёр «Белла» — тканый, ворс хит-сет</name>
+      <description>Сдержанное очарование для Вашего дома. Тканый ковёр из коллекции «Белла», раздел «Хит-сет». Артикул 19С7-ВИ (прям.). Ворс: нить ПП Хит-сет. Плотность 352 000 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1580 г. Расцветок в коллекции: 21. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Белла» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-bella/) Запросы: Белла, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-03" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-versal/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/cbe/500_500_1/ofvpbxg1e9i0629caap2nzcck604wqgh.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>14С13-ВИ(прям.)</vendorCode>
+      <name>Ковёр «Версаль» — тканый, ворс хит-сет</name>
+      <description>Воздушность и тонкая палитра оттенков – словно монограммы, обрамляющие королевскую историю. Тканый ковёр из коллекции «Версаль», раздел «Хит-сет». Артикул 14С13-ВИ (прям.). Ворс: нить ПП Хит-сет. Плотность 435 000 ворсовых точек на м². Высота ворса 9,5 мм. Вес 1 м² готового изделия 1925 г. Расцветок в коллекции: 21. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Версаль» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-versal/) Запросы: Версаль, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-04" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-vivaldi/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/582/500_500_1/pa4tj1fuzhvwy5p89ojtsw1h1l3x7hkc.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>19С7-ВИ(прям.)</vendorCode>
+      <name>Ковёр «Вивальди» — тканый, ворс хит-сет</name>
+      <description>Коллекция вдохновлена мотивами классического искусства в стилях барокко, ар-деко и классицизма. Тканый ковёр из коллекции «Вивальди», раздел «Хит-сет». Артикул 19С7-ВИ (прям.). Ворс: нить ПП Хит-сет. Плотность 352 000 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1580 г. Расцветок в коллекции: 21. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Вивальди» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-vivaldi/) Запросы: Вивальди, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-05" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-virdzhiniya/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/7cd/500_500_1/9nbp7gw334uvvn44jt2iylhzaptzxex4.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>23С26-БК(прям.)</vendorCode>
+      <name>Ковёр «Вирджиния» — тканый, ворс хит-сет</name>
+      <description>Классические узоры исключительного качества, где традиционные мотивы остаются вечно стильными. Тканый ковёр из коллекции «Вирджиния», раздел «Хит-сет». Артикул 23С26-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 676 000 ворсовых точек на м². Высота ворса 6,0 мм. Вес 1 м² готового изделия 1755 г. Расцветок в коллекции: 41. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Вирджиния» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-virdzhiniya/) Запросы: Вирджиния, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-06" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/zheneva/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/3a6/500_500_1/h0c27q6iljd2x1j028ihjgfp28l7njam.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>23С38-БК(прям.)</vendorCode>
+      <name>Ковёр «Женева» — тканый, ворс хит-сет</name>
+      <description>Коллекция преобразит любое пространство, легко впишется в современный или классический интерьер, создав атмосферу изысканного комфорта. Тканый ковёр из коллекции «Женева», раздел «Хит-сет». Артикул 23С38-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 561 600 ворсовых точек на м². Высота ворса 6,0 мм. Вес 1 м² готового изделия 1642 г. Расцветок в коллекции: 22. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Женева» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/zheneva/) Запросы: Женева, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-07" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-konsonans/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/d6f/500_500_1/3j6l4c8jarl76jm99qpb2r5ll9g01lwn.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>20С10-БК(прям.)</vendorCode>
+      <name>Ковёр «Консонанс» — тканый, ворс хит-сет</name>
+      <description>Сочетание кремовых, карамельных, винных, зеленых и темно-синих оттенков в гармонии классических узоров. Тканый ковёр из коллекции «Консонанс», раздел «Хит-сет». Артикул 20С10-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 436 800 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1626 г. Расцветок в коллекции: 62. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Консонанс» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-konsonans/) Запросы: Консонанс, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-08" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-mankhetten/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/6d5/500_500_1/qduy45gjwwm6et47sfsy4acjz2yu809g.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>19С7-ВИ(прям.)</vendorCode>
+      <name>Ковёр «Манхэттен» — тканый, ворс хит-сет</name>
+      <description>Тканый ковёр из коллекции «Манхэттен», раздел «Хит-сет». Артикул 19С7-ВИ (прям.). Ворс: ПП Хит-сет. Плотность 352 000 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1580 г. Расцветок в коллекции: 21. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Манхэттен» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-mankhetten/) Запросы: Манхэттен, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-09" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-oliviya/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/b8c/500_500_1/k86g9tyxl12lihjfsghmlwgqq8iksjac.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>15С7-ВИ(прям.)</vendorCode>
+      <name>Ковёр «Оливия» — тканый, ворс хит-сет</name>
+      <description>Природная палитра для Вашего интерьера. Тканый ковёр из коллекции «Оливия», раздел «Хит-сет». Артикул 15С7-ВИ (прям.). Ворс: нить ПП Хит-сет. Плотность 435 000 ворсовых точек на м². Высота ворса 10,0 мм. Вес 1 м² готового изделия 1890 г. Расцветок в коллекции: 21. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Оливия» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-oliviya/) Запросы: Оливия, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-10" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-roksolana/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/9d4/500_500_1/xfanr1xbpo380gymuwertrqvl82pb13s.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>20С1-БК(прям.)</vendorCode>
+      <name>Ковёр «Роксолана» — тканый, ворс хит-сет</name>
+      <description>Высококачественные классические украшения, напоминающие о Востоке. Тканый ковёр из коллекции «Роксолана», раздел «Хит-сет». Артикул 20С1-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 780 000 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 2195 г. Расцветок в коллекции: 30. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Роксолана» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-roksolana/) Запросы: Роксолана, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    <offer id="khitset-11" available="true">
+      <url>https://vitcarpet.by/catalog/khit-set/kollektsiya-yukka/</url>
+      <currencyId>RUB</currencyId>
+      <categoryId>1</categoryId>
+      <quantity>1</quantity>
+      <picture>https://vitcarpet.by/upload/resize_cache/iblock/6d6/500_500_1/ukdrtg8smzc6qxxxech5xbrvid33tzrm.webp</picture>
+      <vendor>Витебские ковры</vendor>
+      <vendorCode>23С54-БК(прям.)</vendorCode>
+      <name>Ковёр «Юкка» — тканый, ворс хит-сет</name>
+      <description>Узоры, выполненные в песочных, серых и бледно-зеленых тонах, напоминают кактусы, застывшие под палящим солнцем. Тканый ковёр из коллекции «Юкка», раздел «Хит-сет». Артикул 23С54-БК (прям.). Ворс: нить ПП Хит-сет. Плотность 352 000 ворсовых точек на м². Высота ворса 8,0 мм. Вес 1 м² готового изделия 1539 г. Расцветок в коллекции: 17. Размеры и цены — в фирменных магазинах и интернет-магазине; по опту и расчёту отвечает менеджер. Карточка: [Ковёр «Юкка» — тканый, ворс хит-сет](https://vitcarpet.by/catalog/khit-set/kollektsiya-yukka/) Запросы: Юкка, ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер.</description>
+    </offer>
+    </offers>
+  </shop>
+</yml_catalog>

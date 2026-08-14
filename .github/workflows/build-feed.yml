@@ -1,0 +1,64 @@
+name: Build feed
+
+# Фид для бота B24U на vitcarpet.by (раздел «Хит-сет», 11 коллекций).
+#
+# Сгенерированный feed.xml в git НЕ коммитится: при Pages build_type=workflow раздаётся
+# артефакт деплоя, а не файл из репо. Коммит-шага здесь нет — это исключает падения
+# «Merge conflict in feed.xml», из-за которых на других фидах шли письма «Build feed: failed».
+#
+# Репозиторный feed.xml — seed и last-known-good: если vitcarpet.by недоступен с раннера
+# (типовой геоблок RU-сайтов), build-feed.py оставляет прежний файл и выходит успешно.
+#
+# Pages включается один раз:
+#   gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [build-feed.py, feed.xml, .github/workflows/build-feed.yml]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build feed
+        run: python build-feed.py
+
+      - name: Stage Pages artifact
+        run: |
+          mkdir -p _site
+          cp feed.xml _site/feed.xml
+          cp .nojekyll _site/.nojekyll 2>/dev/null || true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
