@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Сборка малого курируемого YML-фида по одному разделу vitcarpet.by.
 
-Все 7 типов ворса каталога — 69 коллекций (лимит тарифа 100 позиций).
+Раздел: «Хит-сет» (тканые ковры) — 11 коллекций.
 Цен на сайте нет, поэтому вариант B из 04-feeds §21.4: <price> не ставим вовсе.
 Остальные поля карточки (currencyId RUB, vendor, vendorCode, quantity, picture, url)
 обязательны — без них карточка в виджете ломается или не рисуется.
@@ -14,21 +14,14 @@ import re, sys, time, urllib.request
 from xml.sax.saxutils import escape
 
 BASE = 'https://vitcarpet.by'
-GROUPS = [
-    ('khit-set', 'Хит-сет', 'тканые', 'хит-сет, heat-set, термофиксированная нить, блестящие ковры'),
-    ('frize', 'Фризе', 'тканые', 'фризе, крученый ворс, шегги, длинный ворс, фигурные коврики'),
-    ('bcf', 'BCF', 'тканые', 'BCF, циновка, безворсовые, плоские ковры'),
-    ('kombinirovannyy-vors', 'Комбинированный ворс', 'тканые', 'комбинированный ворс, смешанный ворс, рельефный ворс'),
-    ('sherst', 'Шерсть', 'тканые', 'шерсть, шерстяные ковры, натуральный ворс'),
-    ('petlevoy-vors', 'Петлевой ворс', 'прошивные', 'петлевой ворс, палитра, берберы, луп-луп, ковровое покрытие, палас'),
-    ('razreznoy-vors', 'Разрезной ворс', 'прошивные', 'разрезной ворс, карнавал, комфорт'),
-]
+GROUP = '/catalog/khit-set/'
+GROUP_RU = 'Хит-сет'
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Accept': 'text/html,application/xhtml+xml',
       'Accept-Language': 'ru-RU,ru;q=0.9'}
 
-SYNONYMS = ('ковёр, ковер, ковер в гостиную, ковер в спальню, ковер на пол, '
-            'белорусский ковер, ковер от производителя')
+SYNONYMS = ('ковёр, ковер, тканый ковер, ворс хит-сет, термофиксированная нить, '
+            'ковер в гостиную, ковер в спальню, ковер на пол, белорусский ковер')
 
 
 def fetch(url, tries=5):
@@ -88,61 +81,55 @@ def keep_last_known_good(reason):
 
 
 def main():
+    group_html = fetch(BASE + GROUP)
+    items = parse_group(group_html)
+    if not items:
+        keep_last_known_good('раздел не разобрался')
+
     offers = []
-    expected = 0
-    for slug, ru, razdel, syn in GROUPS:
-        group_html = fetch('%s/catalog/%s/' % (BASE, slug))
-        items = parse_group(group_html)
-        if not items:
-            keep_last_known_good('раздел «%s» не разобрался' % ru)
-        expected += len(items)
-        print('== %s: %d коллекций' % (ru, len(items)))
-        for n, (path, img, title) in enumerate(items, start=1):
-            url = BASE + path
-            html = fetch(url)
-            if not html:
-                print('  пропуск (не открылась): ' + url, file=sys.stderr)
-                continue
-            specs, lead, colors = parse_collection(html, title)
-            short = title.replace('Коллекция ', '').strip('«»" ')
-            # Препенд артикула в <name> (04-feeds §18.1) проверен и НЕ дал карточек
-            # на артикульных запросах (0 из 2), зато портит заголовок карточки — не используем.
-            vorst = ru.lower() if 'ворс' in ru.lower() else 'ворс ' + ru.lower()
-            name = 'Ковёр «%s» — %s, %s' % (short, razdel[:-1] + 'й', vorst)
+    for n, (path, img, title) in enumerate(items, start=1):
+        url = BASE + path
+        html = fetch(url)
+        if not html:
+            print('  пропуск (не открылась): ' + url, file=sys.stderr)
+            continue
+        specs, lead, colors = parse_collection(html, title)
+        short = title.replace('Коллекция ', '').strip('«»" ')
+        # Препенд артикула в <name> (04-feeds §18.1) проверен и НЕ дал карточек
+        # на артикульных запросах (0 из 2), зато портит заголовок карточки — не используем.
+        name = 'Ковёр «%s» — тканый, ворс хит-сет' % short
 
-            parts = []
-            if lead:
-                parts.append(lead)
-            parts.append('%s ковёр из коллекции «%s», тип ворса «%s».'
-                         % (razdel[:-1].capitalize() + 'й', short, ru))
-            if specs:
-                parts.append('Артикул %s. Ворс: %s. Плотность %s ворсовых точек на м². '
-                             'Высота ворса %s. Вес 1 м² готового изделия %s.'
-                             % (specs.get('article', '—'), specs.get('pile', '—'),
-                                specs.get('points', '—'), specs.get('height', '—'), specs.get('weight', '—')))
-            if colors:
-                parts.append('Расцветок в коллекции: %d.' % colors)
-            parts.append('Размеры и цены — в фирменных магазинах и интернет-магазине; '
-                         'по опту и расчёту отвечает менеджер.')
-            parts.append('Карточка: [%s](%s)' % (name, url))
-            parts.append('Запросы: %s, %s, %s.' % (short, syn, SYNONYMS))
+        parts = []
+        if lead:
+            parts.append(lead)
+        parts.append('Тканый ковёр из коллекции «%s», раздел «%s».' % (short, GROUP_RU))
+        if specs:
+            parts.append('Артикул %s. Ворс: %s. Плотность %s ворсовых точек на м². '
+                         'Высота ворса %s. Вес 1 м² готового изделия %s.'
+                         % (specs.get('article', '—'), specs.get('pile', '—'),
+                            specs.get('points', '—'), specs.get('height', '—'), specs.get('weight', '—')))
+        if colors:
+            parts.append('Расцветок в коллекции: %d.' % colors)
+        parts.append('Размеры и цены — в фирменных магазинах и интернет-магазине; '
+                     'по опту и расчёту отвечает менеджер.')
+        parts.append('Карточка: [%s](%s)' % (name, url))
+        parts.append('Запросы: %s, %s.' % (short, SYNONYMS))
+        desc = ' '.join(parts)
 
-            offers.append({
-                'params': specs,
-                'group_ru': ru,
-                'razdel': razdel,
-                'id': '%s-%02d' % (slug, n),
-                'url': url,
-                'picture': BASE + img if img.startswith('/') else img,
-                'vendor': 'Витебские ковры',
-                'vendorCode': (specs.get('article') or short).replace(' ', ''),
-                'name': name,
-                'description': ' '.join(parts),
-            })
-            print('  собрал: %s' % name)
+        offers.append({
+            'params': specs,
+            'id': 'khitset-%02d' % n,
+            'url': url,
+            'picture': BASE + img if img.startswith('/') else img,
+            'vendor': 'Витебские ковры',
+            'vendorCode': (specs.get('article') or short).replace(' ', ''),
+            'name': name,
+            'description': desc,
+        })
+        print('  собрал: %s (расцветок %d)' % (name, colors))
 
-    if len(offers) < expected:
-        keep_last_known_good('собрано %d из %d позиций (частичный набор)' % (len(offers), expected))
+    if len(offers) < len(items):
+        keep_last_known_good('собрано %d из %d позиций (частичный набор)' % (len(offers), len(items)))
 
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<yml_catalog date="%s">' % time.strftime('%Y-%m-%d %H:%M'),
@@ -151,26 +138,23 @@ def main():
            '    <company>ОАО «Витебские ковры»</company>',
            '    <url>https://vitcarpet.by</url>',
            '    <currencies><currency id="RUB" rate="1"/></currencies>',
-           '    <categories>'] + [
-           '      <category id="%d">%s ковры — %s</category>' % (i + 1, g[2].capitalize(), g[1])
-           for i, g in enumerate(GROUPS)] + [
-           '    </categories>',
+           '    <categories><category id="1">Тканые ковры — хит-сет</category></categories>',
            '    <offers>']
     for o in offers:
         out += ['    <offer id="%s" available="true">' % o['id'],
                 '      <url>%s</url>' % escape(o['url']),
                 '      <currencyId>RUB</currencyId>',
-                '      <categoryId>%d</categoryId>' % ([g[1] for g in GROUPS].index(o['group_ru']) + 1),
+                '      <categoryId>1</categoryId>',
                 '      <quantity>1</quantity>',
                 '      <picture>%s</picture>' % escape(o['picture']),
                 '      <vendor>%s</vendor>' % escape(o['vendor']),
                 '      <vendorCode>%s</vendorCode>' % escape(o['vendorCode']),
                 '      <name>%s</name>' % escape(o['name']),
-                '      <param name="Тип ворса">%s</param>' % escape(o['group_ru']),
+                '      <param name="Тип ворса">Хит-сет</param>',
                 '      <param name="Материал">%s</param>' % escape(o['params'].get('pile', 'нить ПП')),
                 '      <param name="Высота ворса">%s</param>' % escape(o['params'].get('height', '')),
                 '      <param name="Плотность">%s ворсовых точек на м²</param>' % escape(o['params'].get('points', '')),
-                '      <param name="Тип изделия">%s ковёр</param>' % escape(o['razdel'][:-1].capitalize() + 'й'),
+                '      <param name="Тип изделия">Тканый ковёр</param>',
                 '      <description>%s</description>' % escape(o['description']),
                 '    </offer>']
     out += ['    </offers>', '  </shop>', '</yml_catalog>', '']
