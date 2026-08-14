@@ -95,9 +95,9 @@ def main():
             continue
         specs, lead, colors = parse_collection(html, title)
         short = title.replace('Коллекция ', '').strip('«»" ')
-        art = (specs.get('article') or '').replace(' ', '')
-        base_name = 'Ковёр «%s» — тканый, ворс хит-сет' % short
-        name = ('%s %s' % (art, base_name)) if art else base_name
+        # Препенд артикула в <name> (04-feeds §18.1) проверен и НЕ дал карточек
+        # на артикульных запросах (0 из 2), зато портит заголовок карточки — не используем.
+        name = 'Ковёр «%s» — тканый, ворс хит-сет' % short
 
         parts = []
         if lead:
