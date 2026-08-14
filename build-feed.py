@@ -95,7 +95,9 @@ def main():
             continue
         specs, lead, colors = parse_collection(html, title)
         short = title.replace('Коллекция ', '').strip('«»" ')
-        name = 'Ковёр «%s» — тканый, ворс хит-сет' % short
+        art = (specs.get('article') or '').replace(' ', '')
+        base_name = 'Ковёр «%s» — тканый, ворс хит-сет' % short
+        name = ('%s %s' % (art, base_name)) if art else base_name
 
         parts = []
         if lead:
@@ -115,6 +117,7 @@ def main():
         desc = ' '.join(parts)
 
         offers.append({
+            'params': specs,
             'id': 'khitset-%02d' % n,
             'url': url,
             'picture': BASE + img if img.startswith('/') else img,
@@ -147,6 +150,11 @@ def main():
                 '      <vendor>%s</vendor>' % escape(o['vendor']),
                 '      <vendorCode>%s</vendorCode>' % escape(o['vendorCode']),
                 '      <name>%s</name>' % escape(o['name']),
+                '      <param name="Тип ворса">Хит-сет</param>',
+                '      <param name="Материал">%s</param>' % escape(o['params'].get('pile', 'нить ПП')),
+                '      <param name="Высота ворса">%s</param>' % escape(o['params'].get('height', '')),
+                '      <param name="Плотность">%s ворсовых точек на м²</param>' % escape(o['params'].get('points', '')),
+                '      <param name="Тип изделия">Тканый ковёр</param>',
                 '      <description>%s</description>' % escape(o['description']),
                 '    </offer>']
     out += ['    </offers>', '  </shop>', '</yml_catalog>', '']
